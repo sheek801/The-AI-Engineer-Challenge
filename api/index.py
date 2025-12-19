@@ -20,7 +20,8 @@ app.add_middleware(
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 class ChatRequest(BaseModel):
-    message: str
+    jobDescription: str
+    resume: str
 
 @app.get("/")
 def root():
@@ -32,11 +33,16 @@ def chat(request: ChatRequest):
         raise HTTPException(status_code=500, detail="OPENAI_API_KEY not configured")
     
     try:
-        user_message = request.message
+        # Construct the user message with Job Description and Resume
+        user_message = f"Job Description:\n{request.jobDescription}\n\nResume:\n{request.resume}"
+        
         response = client.chat.completions.create(
-            model="gpt-5",
+            model="gpt-4o-mini",  # Using a valid model name instead of gpt-5
             messages=[
-                {"role": "system", "content": "You are a supportive mental coach."},
+                {
+                    "role": "system", 
+                    "content": "You are an expert technical recruiter. You will receive a Job Description and a Resume. Your task is to provide a \"Match Score\" out of 100, identify the top 3 missing keywords, and suggest 2 specific bullet point improvements for the resume."
+                },
                 {"role": "user", "content": user_message}
             ]
         )
