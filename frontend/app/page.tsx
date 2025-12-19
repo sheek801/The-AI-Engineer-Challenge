@@ -60,7 +60,7 @@ export default function Home() {
           {/* Job Description */}
           <div className="flex flex-col">
             <label className="text-lg font-semibold text-cyan-400 mb-3">
-              Job Description
+              Target Job Description
             </label>
             <textarea
               value={jobDescription}
@@ -73,7 +73,7 @@ export default function Home() {
           {/* Resume */}
           <div className="flex flex-col">
             <label className="text-lg font-semibold text-pink-400 mb-3">
-              Resume
+              Your Resume Content
             </label>
             <textarea
               value={resume}
@@ -95,28 +95,28 @@ export default function Home() {
             }}
           >
             <span className="relative z-10">
-              {loading ? 'Scanning...' : 'Scan Application'}
+              {loading ? 'Scanning...' : 'Scan for Match'}
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-purple-600 to-pink-600 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
           </button>
         </div>
 
-        {/* Compatibility Report */}
+        {/* Analysis Report */}
         <AnimatePresence>
           {response && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.5 }}
+              exit={{ opacity: 0, y: 50 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
               className="bg-gray-800/30 backdrop-blur-md border border-purple-500/30 rounded-2xl p-8 shadow-2xl"
               style={{
                 background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%)',
-                boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37), 0 0 20px rgba(168, 85, 247, 0.3)',
               }}
             >
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mb-6">
-                Compatibility Report
+                Analysis Report
               </h2>
               <div className="text-gray-200 whitespace-pre-wrap leading-relaxed">
                 {response}
