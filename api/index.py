@@ -27,10 +27,6 @@ class ChatRequest(BaseModel):
     jobDescription: str
     resume: str
 
-@app.get("/")
-def root():
-    return {"status": "ok"}
-
 @app.post("/api/chat")
 def chat(request: ChatRequest):
     if not os.getenv("OPENAI_API_KEY"):
