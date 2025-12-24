@@ -31,14 +31,17 @@ export default function Home() {
       });
 
       if (!res.ok) {
-        throw new Error('Failed to scan application');
+        const errorData = await res.json().catch(() => ({ detail: 'Unknown error' }));
+        throw new Error(`API Error (${res.status}): ${errorData.detail || res.statusText}`);
       }
 
       const data = await res.json();
       setResponse(data.reply);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error:', error);
-      setResponse('Error: Failed to scan application. Please try again.');
+      // Try to get more detailed error info
+      const errorMessage = error.message || 'Failed to scan application. Please try again.';
+      setResponse(`Error: ${errorMessage}\n\nPlease check:\n1. Your OPENAI_API_KEY is set in Vercel\n2. The API endpoint is accessible\n3. Browser console for more details`);
     } finally {
       setLoading(false);
     }
