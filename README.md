@@ -232,4 +232,4 @@ MIT License - feel free to use this project for learning and portfolio purposes.
 
 ---
 
-**Ready to optimize your resume?** [Try ATS Nexus Now →] https://ats-nexus-beewlm40z-risheeks-projects-79f72a64.vercel.app/
+**Ready to optimize your resume?** [Try ATS Nexus Now →] https://ats-nexus-risheeks-projects-79f72a64.vercel.app/
