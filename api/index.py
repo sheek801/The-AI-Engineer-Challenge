@@ -36,8 +36,9 @@ def chat(request: ChatRequest):
         # Construct the user message with Job Description and Resume
         user_message = f"Job Description:\n{request.jobDescription}\n\nResume:\n{request.resume}"
         
+        # Use GPT-5 with the standard chat.completions.create() API (same format as GPT-4)
         response = client.chat.completions.create(
-            model="gpt-4o-mini",  # Using a valid model name instead of gpt-5
+            model="gpt-5",
             messages=[
                 {
                     "role": "system", 
