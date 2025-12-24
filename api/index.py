@@ -42,7 +42,14 @@ def chat(request: ChatRequest):
             messages=[
                 {
                     "role": "system", 
-                    "content": "You are an expert technical recruiter. You will receive a Job Description and a Resume. Your task is to provide a \"Match Score\" out of 100, identify the top 3 missing keywords, and suggest 2 specific bullet point improvements for the resume."
+                    "content": """You are an expert technical recruiter. Analyze the provided Job Description and Resume. Provide:
+
+1. Match Score (out of 100)
+2. Top 3 missing keywords
+3. Two specific resume bullet point improvements
+4. Executive Summary: A concise paragraph (3-4 sentences) explaining the overall compatibility, the candidate's biggest strength relative to the role, and the single most important area they should focus on to land the interview.
+
+Format your response clearly with section headers."""
                 },
                 {"role": "user", "content": user_message}
             ]

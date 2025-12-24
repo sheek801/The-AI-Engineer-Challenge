@@ -1,197 +1,243 @@
-<p align = "center" draggable=”false” ><img src="https://github.com/AI-Maker-Space/LLM-Dev-101/assets/37101144/d1343317-fa2f-41e1-8af1-1dbb18399719" 
-     width="200px"
-     height="auto"/>
+# 🎯 ATS Nexus: Precision Resume Optimizer
+
+> Bridging the gap between your experience and the recruiter's desk.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js" alt="Next.js"/>
+  <img src="https://img.shields.io/badge/FastAPI-0.121-009688?style=for-the-badge&logo=fastapi" alt="FastAPI"/>
+  <img src="https://img.shields.io/badge/GPT--5-Enabled-10a37f?style=for-the-badge&logo=openai" alt="GPT-5"/>
+  <img src="https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel" alt="Vercel"/>
 </p>
 
+---
 
-## <h1 align="center" id="heading"> 👋 Welcome to the AI Engineer Challenge</h1>
+## 🚨 The Problem
 
-## 🤖 Your First Vibe Coding LLM Application
+**75% of resumes never reach human eyes.**
 
-> If you are a novice, and need a bit more help to get your dev environment off the ground, check out this [Setup Guide](docs/GIT_SETUP.md). This guide will walk you through the 'git' setup you need to get started.
+Modern companies use Applicant Tracking Systems (ATS) to automatically filter thousands of applications. Even qualified candidates get rejected because their resumes don't match the exact keywords, format, or structure the ATS is looking for.
 
-> For additional context on LLM development environments and API key setup, you can also check out our [Interactive Dev Environment for LLM Development](https://github.com/AI-Maker-Space/Interactive-Dev-Environment-for-AI-Engineers).
+**The result?** Talented professionals miss opportunities because of automated gatekeepers.
 
-In this repository, we'll walk you through the steps to create a LLM (Large Language Model) powered application with a vibe-coded frontend!
+---
 
-Are you ready? Let's get started!
+## 💡 The Solution
 
-<details>
-  <summary>🖥️ Accessing "gpt-4.1-mini" (ChatGPT) like a developer</summary>
+**ATS Nexus** is an AI-powered resume optimizer that performs intelligent gap analysis between job descriptions and resumes. Using GPT-5, it provides:
 
-1. Head to [this notebook](https://colab.research.google.com/drive/1sT7rzY_Lb1_wS0ELI1JJfff0NUEcSD72?usp=sharing) and follow along with the instructions!
+- 📊 **Match Score** out of 100
+- 🔑 **Top 3 Missing Keywords** for ATS optimization
+- ✍️ **2 Specific Bullet Point Improvements** to strengthen your resume
+- 📝 **Executive Summary** analyzing overall compatibility, your biggest strength, and the key area to focus on
 
-2. Complete the notebook and try out your own system/assistant messages!
+Think of it as having a senior technical recruiter review your application *before* you submit it.
 
-That's it! Head to the next step and start building your application!
+---
 
-</details>
+## 🏆 AI Engineer Challenge: Mission Accomplished
 
+This project demonstrates three core competencies for AI Engineers:
 
-<details>
-  <summary>🏗️ Forking & Cloning This Repository</summary>
+### 1️⃣ **LLM Orchestration**
+- Built a FastAPI backend that intelligently routes requests to OpenAI's GPT-5
+- Structured prompt engineering for consistent, actionable feedback
+- Error handling and response parsing for production-ready deployment
 
-Before you begin, make sure you have:
+### 2️⃣ **Advanced Prompt Engineering**
+- **Developer Role (System Prompt):** Configured GPT-5 to act as an "expert technical recruiter"
+- **Structured Output:** Engineered prompts to return match scores, keywords, improvements, and executive summary
+- **Multi-part Analysis:** Four-section response format for comprehensive feedback
+- **Context Window Optimization:** Efficiently combines job descriptions and resumes in a single request
 
-1. 👤 A GitHub account (you'll need to replace `YOUR_GITHUB_USERNAME` with your actual username)
-2. 🔧 Git installed on your local machine
-3. 💻 A code editor (like Cursor, VS Code, etc.)
-4. ⌨️ Terminal access (Mac/Linux) or Command Prompt/PowerShell (Windows)
-5. 🔑 A GitHub Personal Access Token (for authentication)
+### 3️⃣ **Full-Stack LLM Deployment**
+- **Frontend:** Professional Next.js UI with Tailwind CSS and Framer Motion
+- **Backend:** Python FastAPI with OpenAI SDK integration
+- **Deployment:** Hybrid architecture on Vercel (Next.js + Python serverless functions)
+- **Production Features:** Environment variable management, CORS configuration, error handling
 
-Got everything in place? Let's move on!
+---
 
-1. Fork [this](https://github.com/AI-Maker-Space/The-AI-Engineer-Challenge) repo!
+## 🛠️ Tech Stack
 
-     ![image](https://i.imgur.com/bhjySNh.png)
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Frontend** | Next.js 14.2 + TypeScript | Server-side rendering, React components |
+| **Styling** | Tailwind CSS | Professional dark mode UI with glassmorphism |
+| **Animation** | Framer Motion | Smooth transitions and micro-interactions |
+| **Backend** | FastAPI | High-performance Python API framework |
+| **AI** | OpenAI GPT-5 | Natural language understanding and generation |
+| **Deployment** | Vercel | Serverless deployment with auto-scaling |
 
-1. Clone your newly created repo.
+---
 
-     ``` bash
-     # First, navigate to where you want the project folder to be created
-     cd PATH_TO_DESIRED_PARENT_DIRECTORY
+## 🚀 Quick Start
 
-     # Then clone (this will create a new folder called The-AI-Engineer-Challenge)
-     git clone git@github.com:<YOUR GITHUB USERNAME>/The-AI-Engineer-Challenge.git
-     ```
+### Prerequisites
 
-     > Note: This command uses SSH. If you haven't set up SSH with GitHub, the command will fail. In that case, use HTTPS by replacing `git@github.com:` with `https://github.com/` - you'll then be prompted for your GitHub username and personal access token.
+- Python 3.9+ (managed by `uv`)
+- Node.js 18+ and npm
+- OpenAI API key ([Get one here](https://platform.openai.com/api-keys))
 
-2. Verify your git setup:
+### 1. Clone the Repository
 
-     ```bash
-     # Check that your remote is set up correctly
-     git remote -v
+```bash
+git clone https://github.com/YOUR_USERNAME/The-AI-Engineer-Challenge.git
+cd The-AI-Engineer-Challenge
+```
 
-     # Check the status of your repository
-     git status
+### 2. Set Up the Backend
 
-     # See which branch you're on
-     git branch
-     ```
+```bash
+# Install uv package manager
+pip install uv
 
-     <!-- > Need more help with git? Check out our [Detailed Git Setup Guide](docs/GIT_SETUP.md) for a comprehensive walkthrough of git configuration and best practices. -->
+# Install Python dependencies
+uv sync
 
-3. Open the freshly cloned repository inside Cursor!
+# Set your OpenAI API key
+export OPENAI_API_KEY=sk-your-key-here
 
-     ```bash
-     cd The-AI-Engineering-Challenge
-     cursor .
-     ```
+# Start the FastAPI server
+uv run uvicorn api.index:app --reload
+```
 
-4. Check out the existing backend code found in `/api/index.py`
+The API will be available at `http://localhost:8000`
 
-</details>
+### 3. Set Up the Frontend
 
-<details>
-  <summary>⚙️ Backend Setup with uv</summary>
+```bash
+# Install Node dependencies
+npm install
 
-1. Install the [`uv`](https://github.com/astral-sh/uv) package manager (`pip install uv`). `uv` will download and manage Python 3.12 for you the first time you run a project command.
-2. From the project root, install dependencies with `uv sync`. This creates `.venv/` (and fetches Python 3.12 automatically if needed).
-3. Set your OpenAI API key in the shell before running the server, for example `export OPENAI_API_KEY=sk-...`.
-4. Start the backend directly from the project root with `uv run uvicorn api.index:app --reload`. The server will run on `http://localhost:8000` with auto-reload enabled for development.
-5. Additional backend details live in `api/README.md`.
+# Start the Next.js dev server
+npm run dev
+```
 
-</details>
+The app will be available at `http://localhost:3000`
 
-<details>
-  <summary>🔥Setting Up for Vibe Coding Success </summary>
+### 4. Environment Variables
 
-While it is a bit counter-intuitive to set things up before jumping into vibe-coding - it's important to remember that there exists a gradient betweeen AI-Assisted Development and Vibe-Coding. We're only reaching *slightly* into AI-Assisted Development for this challenge, but it's worth it!
+Create a `.env` file in the root directory:
 
-1. Check out the rules in `.cursor/rules/` and add theme-ing information like colour schemes in `frontend-rule.mdc`! You can be as expressive as you'd like in these rules!
-2. We're going to index some docs to make our application more likely to succeed. To do this - we're going to start with `CTRL+SHIFT+P` (or `CMD+SHIFT+P` on Mac) and we're going to type "custom doc" into the search bar. 
+```env
+OPENAI_API_KEY=sk-your-openai-api-key
+```
 
-     ![image](https://i.imgur.com/ILx3hZu.png)
-3. We're then going to copy and paste `https://nextjs.org/docs` into the prompt.
+---
 
-     ![image](https://i.imgur.com/psBjpQd.png)
-
-4. We're then going to use the default configs to add these docs to our available and indexed documents.
-
-     ![image](https://i.imgur.com/LULLeaF.png)
-
-5. After that - you will do the same with Vercel's documentation. After which you should see:
-
-     ![image](https://i.imgur.com/hjyXhhC.png) 
-
-</details>
-
-<details>
-  <summary>😎 Vibe Coding a Front End for the FastAPI Backend</summary>
-
-1. Use `Command-L` or `CTRL-L` to open the Cursor chat console. 
-
-2. Set the chat settings to the following:
-
-     ![image](https://i.imgur.com/LSgRSgF.png)
-
-3. Ask Cursor to create a frontend for your application. Iterate as much as you like!
-
-4. Run the frontend using the instructions Cursor provided. 
-
-> NOTE: If you run into any errors, copy and paste them back into the Cursor chat window - and ask Cursor to fix them!
-
-> NOTE: You have been provided with a backend in the `/api` folder - please ensure your Front End integrates with it!
-
-</details>
-
-<details>
-  <summary>🚀 Deploying Your First LLM-powered Application with Vercel</summary>
-
-1. Ensure you have signed into [Vercel](https://vercel.com/) with your GitHub account.
-
-2. Ensure you have `npm` (this may have been installed in the previous vibe-coding step!) - if you need help with that, ask Cursor!
-
-3. Run the command:
-
-     ```bash
-     npm install -g vercel
-     ```
-
-4. Run the command:
-
-     ```bash
-     vercel
-     ```
-
-5. Follow the in-terminal instructions. (Below is an example of what you will see!)
-
-     ![image](https://i.imgur.com/D1iKGCq.png)
-
-6. Once the build is completed - head to the provided link and try out your app!
-
-> NOTE: Remember, if you run into any errors - ask Cursor to help you fix them!
-
-</details>
-
-### Vercel Link to Share
-
-You'll want to make sure you share you *domains* hyperlink to ensure people can access your app!
-
-![image](https://i.imgur.com/mpXIgIz.png)
-
-> NOTE: Test this is the public link by trying to open your newly deployed site in an Incognito browser tab!
-
-### 🎉 Congratulations! 
-
-You just deployed your first LLM-powered application! 🚀🚀🚀 Get on linkedin and post your results and experience! Make sure to tag us at @AIMakerspace!
-
-Here's a template to get your post started!
+## 📁 Project Structure
 
 ```
-🚀🎉 Exciting News! 🎉🚀
-
-🏗️ Today, I'm thrilled to announce that I've successfully built and shipped my first-ever LLM using the powerful combination of , and the OpenAI API! 🖥️
-
-Check it out 👇
-[LINK TO APP]
-
-A big shoutout to the @AI Makerspace for all making this possible. Couldn't have done it without the incredible community there. 🤗🙏
-
-Looking forward to building with the community! 🙌✨ Here's to many more creations ahead! 🥂🎉
-
-Who else is diving into the world of AI? Let's connect! 🌐💡
-
-#FirstLLMApp 
+ATS-Nexus/
+├── api/                    # FastAPI backend
+│   ├── index.py           # Main API routes and GPT-5 integration
+│   └── requirements.txt   # Python dependencies
+├── app/                    # Next.js frontend
+│   ├── page.tsx           # Main application page
+│   ├── layout.tsx         # Root layout component
+│   └── globals.css        # Global styles
+├── vercel.json            # Vercel deployment configuration
+└── package.json           # Node.js dependencies
 ```
+
+---
+
+## 🎨 Features
+
+### Professional UI/UX
+- **Dark Mode Design:** Deep slate background with emerald/blue accents
+- **Glassmorphism:** Subtle backdrop blur and transparency effects
+- **Responsive Layout:** Optimized for desktop and mobile
+- **3-Step Visual Guide:** Clear instructions for users
+
+### Smart Analysis
+- **Real-time Processing:** Instant feedback on resume-job match
+- **Comprehensive Feedback:** Match score, keywords, improvements, and executive summary
+- **Actionable Insights:** Clear guidance on what to improve and why
+- **Error Handling:** User-friendly error messages with troubleshooting tips
+
+### Production Ready
+- **Serverless Architecture:** Auto-scaling on Vercel
+- **CORS Configuration:** Secure frontend-backend communication
+- **Environment Management:** Safe API key handling
+
+---
+
+## 🌐 Deployment
+
+### Deploy to Vercel
+
+1. Push your code to GitHub
+2. Connect your repo to Vercel
+3. Add environment variables:
+   - `OPENAI_API_KEY`: Your OpenAI API key
+4. Deploy!
+
+Vercel will automatically:
+- Build the Next.js frontend
+- Deploy Python API as serverless functions
+- Configure routing between frontend and backend
+
+---
+
+## 📊 How It Works
+
+```mermaid
+graph LR
+    A[User] -->|Pastes Job Description & Resume| B[Next.js Frontend]
+    B -->|API Request| C[FastAPI Backend]
+    C -->|Structured Prompt| D[GPT-5]
+    D -->|Gap Analysis| C
+    C -->|JSON Response| B
+    B -->|Display Results| A
+```
+
+1. **User Input:** Job description and resume text
+2. **API Processing:** FastAPI constructs a specialized prompt
+3. **AI Analysis:** GPT-5 evaluates match and identifies gaps
+4. **Structured Output:** Match score, keywords, improvements, and executive summary
+5. **Visual Display:** Results shown in professional UI with clear section headers
+
+---
+
+## 🎓 Learning Outcomes
+
+Building ATS Nexus teaches:
+
+- **LLM Integration:** Working with OpenAI's API
+- **Prompt Engineering:** Crafting effective system prompts
+- **Full-Stack Development:** Next.js + FastAPI hybrid architecture
+- **Serverless Deployment:** Managing environment variables and routing
+- **Production Best Practices:** Error handling, CORS, and security
+
+---
+
+## 🤝 Contributing
+
+This project was built as part of the AI Makerspace Engineer Challenge. Feel free to fork it and make it your own!
+
+---
+
+## 📝 License
+
+MIT License - feel free to use this project for learning and portfolio purposes.
+
+---
+
+## 🙏 Acknowledgments
+
+- **AI Makerspace** for the challenge framework
+- **OpenAI** for GPT-5 API access
+- **Vercel** for seamless deployment platform
+
+---
+
+## 📬 Contact
+
+Built with ❤️ by [Your Name]
+
+🔗 [Live Demo](your-vercel-url.vercel.app) | 💼 [LinkedIn](your-linkedin) | 🐙 [GitHub](your-github)
+
+---
+
+**Ready to optimize your resume?** [Try ATS Nexus Now →](your-vercel-url.vercel.app)
